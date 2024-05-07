@@ -5,7 +5,10 @@ namespace App\Controllers;
 use App\Models\ProfileModel;
 use CodeIgniter\Controller;
 
-    // show profiles list
+class ProfileController extends Controller
+{
+
+// show profiles list
     public function index()
     {
         $ProfileModel = new ProfileModel();
@@ -62,3 +65,4 @@ use CodeIgniter\Controller;
         $data['profile'] = $ProfileModel->where('id', $id)->delete($id);
         return $this->response->redirect(site_url('/profiles-list'));
     }
+}    
